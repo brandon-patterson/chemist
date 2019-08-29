@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.gitub.brandon_patterson.chemist"
+        applicationId "com.github.brandon_patterson.chemist"
         minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
