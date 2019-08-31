@@ -1,4 +1,4 @@
-package com.gitub.brandon_patterson.chemist.matter;
+package com.github.brandon_patterson.chemist.matter;
 
 public class NoSuchElementException extends Exception
 {
