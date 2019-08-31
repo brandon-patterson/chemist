@@ -53,6 +53,8 @@ public class ElementTest {
     {
         when(mockResources.getString(R.string.element_symbol_079)).thenReturn("Au");
         assertThat(Element.fromSymbol("Au", mockContext)).isEqualTo(Element.AU);
+        assertThat(Element.fromSymbol("au", mockContext)).isEqualTo(Element.AU);
+        assertThat(Element.fromSymbol("AU", mockContext)).isEqualTo(Element.AU);
     }
 
     @Test
@@ -67,5 +69,7 @@ public class ElementTest {
     {
         when(mockResources.getString(R.string.element_name_092)).thenReturn("Uranium");
         assertThat(Element.fromName("Uranium", mockContext)).isEqualTo(Element.U);
+        assertThat(Element.fromName("uranium", mockContext)).isEqualTo(Element.U);
+        assertThat(Element.fromName("URANIUM", mockContext)).isEqualTo(Element.U);
     }
 }
