@@ -28,14 +28,12 @@
                       android:orientation="vertical"
                       android:layout_gravity="center"
                       android:gravity="center_horizontal"
-                      android:dividerPadding="2dp"
-                      android:weightSum="5">
+                      android:dividerPadding="2dp">
             <Button
                     android:id="@+id/main_unit_analysis_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:text="Unit Analysis"/>
@@ -45,7 +43,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:text="Models"/>
@@ -55,7 +52,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:text="Balance Equations"/>
@@ -65,7 +61,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:text="Stoichiometry"/>
@@ -75,7 +70,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="1"
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:text="References"/>
