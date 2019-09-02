@@ -1,107 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.gitub.brandon_patterson.chemist.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="com.gitub.brandon_patterson.chemist.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="Hello Chemist!" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="Hello Chemist!"/>
 
-    <LinearLayout android:layout_height="wrap_content"
-                  android:layout_width="fill_parent"
-                  android:layout_alignParentBottom="true"
-                  android:layout_gravity="center_horizontal"
-                  android:gravity="center_horizontal"
-                  android:weightSum="5" >
-        <Button
-                android:id="@+id/unit_analysis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="2dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
-                android:paddingTop="2dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:text="Unit\nAnalysis" />
 
-        <Button
-                android:id="@+id/models"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="2dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
-                android:paddingTop="2dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:text="Models" />
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-                android:id="@+id/balance_equations"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="2dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
-                android:paddingTop="2dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:text="Balance\nEquations" />
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:orientation="vertical"
+                      android:layout_gravity="center"
+                      android:gravity="center_horizontal"
+                      android:dividerPadding="2dp"
+                      android:weightSum="5">
+            <Button
+                    android:id="@+id/main_unit_analysis_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:text="Unit Analysis"/>
 
-        <Button
-                android:id="@+id/stoichiometry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="2dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
-                android:paddingTop="2dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:text="Stoichiometry" />
+            <Button
+                    android:id="@+id/main_models_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:text="Models"/>
 
-        <Button
-                android:id="@+id/references"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingBottom="2dp"
-                android:paddingLeft="2dp"
-                android:paddingRight="2dp"
-                android:paddingTop="2dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:text="References" />
-    </LinearLayout>
+            <Button
+                    android:id="@+id/main_balance_equations_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:text="Balance Equations"/>
+
+            <Button
+                    android:id="@+id/main_stoichiometry_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:text="Stoichiometry"/>
+
+            <Button
+                    android:id="@+id/main_references_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:text="References"/>
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
