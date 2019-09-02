@@ -1,4 +1,4 @@
-package com.gitub.brandon_patterson.chemist;
+package com.github.brandon_patterson.chemist;
 
 import org.junit.Test;
 
