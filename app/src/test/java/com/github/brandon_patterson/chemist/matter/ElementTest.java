@@ -64,17 +64,16 @@ public class ElementTest {
     @Test
     public void getSymbol()
     {
-        when(mockResources.getString(R.string.element_symbol_007)).thenReturn("N");
-        assertThat(Element.N.getSymbol(mockContext)).isEqualTo("N");
+        assertThat(Element.N.getSymbol()).isEqualTo("N");
+        assertThat(Element.NA.getSymbol()).isEqualTo("Na");
     }
 
     @Test
     public void fromSymbol_validInput() throws NoSuchElementException
     {
-        when(mockResources.getString(R.string.element_symbol_079)).thenReturn("Au");
-        assertThat(Element.fromSymbol("Au", mockContext)).isEqualTo(Element.AU);
-        assertThat(Element.fromSymbol("au", mockContext)).isEqualTo(Element.AU);
-        assertThat(Element.fromSymbol("AU", mockContext)).isEqualTo(Element.AU);
+        assertThat(Element.fromSymbol("Au")).isEqualTo(Element.AU);
+        assertThat(Element.fromSymbol("au")).isEqualTo(Element.AU);
+        assertThat(Element.fromSymbol("AU")).isEqualTo(Element.AU);
     }
 
     @Test
@@ -82,7 +81,7 @@ public class ElementTest {
     {
         String expectedExceptionName = NoSuchElementException.class.getSimpleName();
         try {
-            Element.fromSymbol("Xx", mockContext);
+            Element.fromSymbol("Xx");
             Assert.fail("Expected " + expectedExceptionName + ", but no exception was thrown.");
         }
         catch (NoSuchElementException ex)
