@@ -1,4 +1,4 @@
-package com.gitub.brandon_patterson.chemist;
+package com.github.brandon_patterson.chemist;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.gitub.brandon_patterson.chemist", appContext.getPackageName());
+        assertEquals("com.github.brandon_patterson.chemist", appContext.getPackageName());
     }
 }
