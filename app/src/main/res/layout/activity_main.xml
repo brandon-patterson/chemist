@@ -17,7 +17,7 @@
             android:layout_centerHorizontal="true"
             android:textStyle="bold"
             android:textSize="24sp"
-            android:text="Hello Chemist!"/>
+            android:text="@string/hello_chemist"/>
 
 
     <ScrollView android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:text="Unit Analysis"/>
+                    android:text="@string/unit_analysis"/>
 
             <Button
                     android:id="@+id/main_models_button"
@@ -46,7 +46,7 @@
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:text="Models"/>
+                    android:text="@string/models"/>
 
             <Button
                     android:id="@+id/main_balance_equations_button"
@@ -55,7 +55,7 @@
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:text="Balance Equations"/>
+                    android:text="@string/balance_equations"/>
 
             <Button
                     android:id="@+id/main_stoichiometry_button"
@@ -64,7 +64,7 @@
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:text="Stoichiometry"/>
+                    android:text="@string/stoichiometry"/>
 
             <Button
                     android:id="@+id/main_references_button"
@@ -73,7 +73,7 @@
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:text="References"/>
+                    android:text="@string/references"/>
         </LinearLayout>
     </ScrollView>
 
