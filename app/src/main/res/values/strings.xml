@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Chemist</string>
+    <string name="hello_chemist">Hello Chemist!</string>
+    <string name="unit_analysis">Unit Analysis</string>
+    <string name="models">Models</string>
+    <string name="balance_equations">Balance Equations</string>
+    <string name="stoichiometry">Stoichiometry</string>
+    <string name="references">References</string>
 </resources>
