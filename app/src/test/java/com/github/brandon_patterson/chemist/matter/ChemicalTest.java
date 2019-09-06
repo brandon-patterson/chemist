@@ -105,4 +105,13 @@ public class ChemicalTest {
             Assert.fail("Expected IllegalArgumentException, but got " + exType);
         }
     }
+
+    @Test
+    public void testBuilder_createsImmutableChemicals(){
+        Chemical.Builder builder = Chemical.Builder.newInstance().add(Element.H, 2);
+        Chemical hydrogen = builder.build();
+        builder.add(Element.O);
+        Chemical water = builder.build();
+        assertThat(hydrogen.toString()).isEqualTo("H2");
+    }
 }

@@ -1,15 +1,17 @@
 package com.github.brandon_patterson.chemist.matter;
 
+import com.google.common.collect.ImmutableList;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Chemical
 {
-    private List<ChemicalNode> nodes;
+    private ImmutableList<ChemicalNode> nodes;
 
     private Chemical (List<ChemicalNode> nodes)
     {
-        this.nodes = nodes;
+        this.nodes = ImmutableList.copyOf(nodes);
     }
 
     public void accept(ChemicalVisitor visitor)
