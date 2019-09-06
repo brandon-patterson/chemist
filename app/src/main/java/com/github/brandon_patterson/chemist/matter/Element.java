@@ -124,12 +124,12 @@ public enum Element {
     TS(R.string.element_name_117, 117),
     OG(R.string.element_name_118, 118);
 
-    private int name_id;
+    private int nameId;
     private int atomicNumber;
 
-    Element(int name_id, int atomicNumber)
+    Element(int nameId, int atomicNumber)
     {
-        this.name_id = name_id;
+        this.nameId = nameId;
         this.atomicNumber = atomicNumber;
     }
 
@@ -140,7 +140,7 @@ public enum Element {
 
     public String getName(Context context)
     {
-        return context.getResources().getString(name_id);
+        return context.getResources().getString(nameId);
     }
 
     public String getSymbol()
