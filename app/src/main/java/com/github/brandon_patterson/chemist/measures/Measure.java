@@ -26,6 +26,14 @@ public class Measure {
 
     public Measure add(Measure other)
     {
+        if (this.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return other;
+        }
+        else if (other.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return this;
+        }
         BigDecimal sum = this.value.add(other.value);
         int lastSignificantDecimalPlace = Math.max(
                 this.getLastSignificantDecimalPlace(),
@@ -36,6 +44,14 @@ public class Measure {
 
     public Measure subtract(Measure other)
     {
+        if (this.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return new Measure(other.value.negate(), other.significantDigits);
+        }
+        else if (other.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return this;
+        }
         BigDecimal difference = this.value.subtract(other.value);
         int lastSignificantDecimalPlace = Math.max(
                 this.getLastSignificantDecimalPlace(),
@@ -46,6 +62,11 @@ public class Measure {
 
     public Measure multiply(Measure other)
     {
+        if (this.value.compareTo(BigDecimal.ZERO) == 0
+                || other.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return new Measure(0, 0);
+        }
         BigDecimal value = this.value.multiply(other.value);
         int sigFigs = Math.min(this.significantDigits, other.significantDigits);
         return new Measure(value, sigFigs);
@@ -53,6 +74,14 @@ public class Measure {
 
     public Measure divide(Measure other)
     {
+        if (this.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return new Measure(0, 0);
+        }
+        else if (other.value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            throw new IllegalArgumentException("Attempted division by zero");
+        }
         MathContext context = new MathContext(20, RoundingMode.HALF_UP);
         BigDecimal value = this.value.divide(other.value, context);
         int sigFigs = Math.min(this.significantDigits, other.significantDigits);
@@ -62,6 +91,11 @@ public class Measure {
     @Override
     public String toString()
     {
+        if(value.compareTo(BigDecimal.ZERO) == 0)
+        {
+            return "0";
+        }
+
         String converted = value.abs().round(new MathContext(significantDigits)).toPlainString();
 
         // if we have an integer result with no significant decimal places
@@ -101,8 +135,10 @@ public class Measure {
     }
 
     private String addTrailingZerosAfterDecimalForInteger(String positiveIntegerString) {
+
+        int digitsNeeded = significantDigits - positiveIntegerString.length();
         positiveIntegerString += DECIMAL;
-        for(int i = significantDigits - positiveIntegerString.length(); i >= 0; i-- )
+        for(int i = 0; i<digitsNeeded; i++)
         {
             positiveIntegerString += '0';
         }
