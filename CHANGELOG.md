@@ -11,3 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - basic CI (for unit tests only)
 - homepage
 - Elements enum (symbol/name/number only)
+- Significant Figure calculations
