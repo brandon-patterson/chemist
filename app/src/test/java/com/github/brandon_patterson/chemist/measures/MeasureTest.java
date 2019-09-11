@@ -68,8 +68,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(43.21, 5);
-        assertThat(a.add(b).toString()).isEqualTo("166.66");
-        assertThat(b.add(a).toString()).isEqualTo("166.66");
+        Measure expected = new Measure(166.66, 5);
+        assertThat(a.add(b)).isEqualTo(expected);
+        assertThat(b.add(a)).isEqualTo(expected);
     }
 
     @Test
@@ -77,8 +78,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(987.65, 5);
-        assertThat(a.add(b).toString()).isEqualTo("1111.10");
-        assertThat(b.add(a).toString()).isEqualTo("1111.10");
+        Measure expected = new Measure(1111.10, 6);
+        assertThat(a.add(b)).isEqualTo(expected);
+        assertThat(b.add(a)).isEqualTo(expected);
     }
 
     @Test
@@ -86,8 +88,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(543, 3);
-        assertThat(a.add(b).toString()).isEqualTo("666");
-        assertThat(b.add(a).toString()).isEqualTo("666");
+        Measure expected = new Measure(666, 3);
+        assertThat(a.add(b)).isEqualTo(expected);
+        assertThat(b.add(a)).isEqualTo(expected);
     }
 
     @Test
@@ -95,8 +98,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(987, 3);
-        assertThat(a.add(b).toString()).isEqualTo("111<u>0</u>");
-        assertThat(b.add(a).toString()).isEqualTo("111<u>0</u>");
+        Measure expected = new Measure(1110, 4);
+        assertThat(a.add(b)).isEqualTo(expected);
+        assertThat(b.add(a)).isEqualTo(expected);
     }
 
     @Test
@@ -104,8 +108,8 @@ public class MeasureTest {
     {
         Measure notZero = new Measure(123.45, 5);
         Measure zero = new Measure(0,0);
-        assertThat(notZero.add(zero).toString()).isEqualTo(notZero.toString());
-        assertThat(zero.add(notZero).toString()).isEqualTo(notZero.toString());
+        assertThat(notZero.add(zero)).isEqualTo(notZero);
+        assertThat(zero.add(notZero)).isEqualTo(notZero);
     }
 
     @Test
@@ -113,8 +117,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(23.45, 5);
-        assertThat(a.subtract(b).toString()).isEqualTo("100.00");
-        assertThat(b.subtract(a).toString()).isEqualTo("-100.00");
+        assertThat(a.subtract(b)).isEqualTo(new Measure(100, 5));
+        assertThat(b.subtract(a)).isEqualTo(new Measure(-100, 5));
     }
 
     @Test
@@ -122,8 +126,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(120, 5);
-        assertThat(a.subtract(b).toString()).isEqualTo("3.45");
-        assertThat(b.subtract(a).toString()).isEqualTo("-3.45");
+        assertThat(a.subtract(b)).isEqualTo(new Measure(3.45, 3));
+        assertThat(b.subtract(a)).isEqualTo(new Measure(-3.45, 3));
     }
 
     @Test
@@ -131,8 +135,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45,5);
         Measure b = new Measure(543.21, 3);
-        assertThat(a.subtract(b).toString()).isEqualTo("-42<u>0</u>");
-        assertThat(b.subtract(a).toString()).isEqualTo("42<u>0</u>");
+        assertThat(a.subtract(b)).isEqualTo(new Measure(-420, 3));
+        assertThat(b.subtract(a)).isEqualTo(new Measure(420, 3));
     }
 
     @Test
@@ -140,8 +144,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(120, 3);
-        assertThat(a.subtract(b).toString()).isEqualTo("3");
-        assertThat(b.subtract(a).toString()).isEqualTo("-3");
+        assertThat(a.subtract(b)).isEqualTo(new Measure(3, 1));
+        assertThat(b.subtract(a)).isEqualTo(new Measure(-3, 1));
     }
 
     @Test
@@ -149,8 +153,8 @@ public class MeasureTest {
     {
         Measure notZero = new Measure(123.45, 5);
         Measure zero = new Measure(0,0);
-        assertThat(notZero.subtract(zero).toString()).isEqualTo(notZero.toString());
-        assertThat(zero.subtract(notZero).toString()).isEqualTo("-" + notZero.toString());
+        assertThat(notZero.subtract(zero)).isEqualTo(notZero);
+        assertThat(zero.subtract(notZero)).isEqualTo(notZero.multiply(new Measure(-1, 20)));
     }
 
     @Test
@@ -158,8 +162,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(543.21, 5);
-        assertThat(a.multiply(b).toString()).isEqualTo("67059");
-        assertThat(b.multiply(a).toString()).isEqualTo("67059");
+        Measure expected = new Measure(67059, 5);
+        assertThat(a.multiply(b)).isEqualTo(expected);
+        assertThat(b.multiply(a)).isEqualTo(expected);
     }
 
     @Test
@@ -167,8 +172,9 @@ public class MeasureTest {
     {
         Measure a = new Measure(123.45, 5);
         Measure b = new Measure(543.21, 3);
-        assertThat(a.multiply(b).toString()).isEqualTo("67100");
-        assertThat(b.multiply(a).toString()).isEqualTo("67100");
+        Measure expected = new Measure(67100, 3);
+        assertThat(a.multiply(b)).isEqualTo(expected);
+        assertThat(b.multiply(a)).isEqualTo(expected);
     }
 
     @Test
@@ -176,8 +182,8 @@ public class MeasureTest {
     {
         Measure notZero = new Measure(123.45, 5);
         Measure zero = new Measure(0,0);
-        assertThat(notZero.multiply(zero).toString()).isEqualTo(zero.toString());
-        assertThat(zero.multiply(notZero).toString()).isEqualTo(zero.toString());
+        assertThat(notZero.multiply(zero)).isEqualTo(zero);
+        assertThat(zero.multiply(notZero)).isEqualTo(zero);
     }
 
     @Test
@@ -185,8 +191,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(3, 2);
         Measure b = new Measure(1, 2);
-        assertThat(a.divide(b).toString()).isEqualTo("3.0");
-        assertThat(b.divide(a).toString()).isEqualTo("0.33");
+        assertThat(a.divide(b)).isEqualTo(new Measure(3, 2));
+        assertThat(b.divide(a)).isEqualTo(new Measure(0.33, 2));
     }
 
     @Test
@@ -194,8 +200,8 @@ public class MeasureTest {
     {
         Measure a = new Measure(3, 2);
         Measure b = new Measure(1, 1);
-        assertThat(a.divide(b).toString()).isEqualTo("3");
-        assertThat(b.divide(a).toString()).isEqualTo("0.3");
+        assertThat(a.divide(b)).isEqualTo(new Measure(3, 1));
+        assertThat(b.divide(a)).isEqualTo(new Measure(0.33, 1));
     }
 
     @Test
@@ -203,7 +209,7 @@ public class MeasureTest {
     {
         Measure notZero = new Measure(123.45, 5);
         Measure zero = new Measure(0,0);
-        assertThat(zero.divide(notZero).toString()).isEqualTo(zero.toString());
+        assertThat(zero.divide(notZero)).isEqualTo(zero);
         try
         {
             notZero.divide(zero);
