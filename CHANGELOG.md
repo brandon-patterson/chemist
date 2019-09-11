@@ -14,4 +14,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chemical class for representing atomic counts
 - Chemical visitors
   - formula string generator
+  - molar mass calculator
 - Significant Figure calculations
