@@ -89,6 +89,23 @@ public class Measure {
     }
 
     @Override
+    public boolean equals(Object other)
+    {
+        if (other == null || other.getClass() != this.getClass())
+        {
+            return false;
+        }
+        Measure otherMeasure = (Measure) other;
+        return this.toString().equals(otherMeasure.toString());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return this.toString().hashCode();
+    }
+
+    @Override
     public String toString()
     {
         if(value.compareTo(BigDecimal.ZERO) == 0)

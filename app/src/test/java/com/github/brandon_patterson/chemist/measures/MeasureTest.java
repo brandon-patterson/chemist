@@ -218,4 +218,23 @@ public class MeasureTest {
             Assert.fail("Expected IllegalArgumentException for division by zero");
         }
     }
+
+    @Test
+    public void testEquals()
+    {
+        assertThat(new Measure(1, 1)).isEqualTo(new Measure(1, 1));
+        assertThat(new Measure(1, 1)).isNotEqualTo(new Measure(2, 1));
+        assertThat(new Measure(1, 1)).isNotEqualTo(new Measure(1, 2));
+    }
+
+    @Test
+    public void testHashCode()
+    {
+        assertThat(new Measure(1, 1).hashCode())
+                .isEqualTo(new Measure(1, 1).hashCode());
+        assertThat(new Measure(1, 1).hashCode())
+                .isNotEqualTo(new Measure(2, 1).hashCode());
+        assertThat(new Measure(1, 1).hashCode())
+                .isNotEqualTo(new Measure(1, 2).hashCode());
+    }
 }
