@@ -2,6 +2,7 @@ package com.github.brandon_patterson.chemist.matter.physicalConstants;
 
 import com.github.brandon_patterson.chemist.matter.Chemical;
 import com.github.brandon_patterson.chemist.matter.Element;
+import com.github.brandon_patterson.chemist.measures.Measure;
 
 import org.junit.Test;
 
@@ -9,14 +10,11 @@ import static com.google.common.truth.Truth.assertThat;
 
 public class MolarMassTest {
 
-    static double TOLERANCE = 1e-10;
-
     @Test
     public void testGetMass_element() throws Exception
     {
         assertThat(MolarMass.getMass(Element.CL))
-                .isWithin(TOLERANCE)
-                .of(35.45);
+                .isEqualTo(new Measure(35.45, 4));
     }
 
     @Test
@@ -29,8 +27,7 @@ public class MolarMassTest {
                 .build();
 
         assertThat(MolarMass.getMass(glucose))
-                .isWithin(TOLERANCE)
-                .of(180.156);
+                .isEqualTo(new Measure(180.16, 5));
     }
 
     @Test
@@ -53,7 +50,6 @@ public class MolarMassTest {
                 .build();
 
         assertThat(MolarMass.getMass(guanidineSulfate))
-                .isWithin(TOLERANCE)
-                .of(216.216);
+                .isEqualTo(new Measure(216.22, 5));
     }
 }
