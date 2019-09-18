@@ -29,11 +29,12 @@ public class ChemicalEquationTest {
                 add(Element.O).
                 build();
 
-        ChemicalEquation respiration = new ChemicalEquation();
-        respiration.addReactant(glucose);
-        respiration.addReactant(oxygen);
-        respiration.addProduct(carbonDioxide);
-        respiration.addProduct(water);
+        ChemicalEquation respiration = ChemicalEquation.Builder.getInstance()
+                .addReactant(glucose)
+                .addReactant(oxygen)
+                .addProduct(carbonDioxide)
+                .addProduct(water)
+                .build();
 
         assertThat(respiration.toString()).isEqualTo("C6H12O6 + O2 => CO2 + H2O");
     }
