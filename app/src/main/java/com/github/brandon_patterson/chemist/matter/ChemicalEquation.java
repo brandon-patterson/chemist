@@ -1,5 +1,6 @@
 package com.github.brandon_patterson.chemist.matter;
 
+import com.github.brandon_patterson.chemist.utils.StringUtils;
 import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
@@ -20,23 +21,9 @@ public class ChemicalEquation
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
-
-        for(Chemical c : reactants)
-        {
-            sb.append(c);
-            sb.append(" + ");
-        }
-        sb.delete(sb.length() - 3, sb.length());
-
+        sb.append(StringUtils.join(" + ", reactants));
         sb.append(" => ");
-
-        for(Chemical c : products)
-        {
-            sb.append(c);
-            sb.append(" + ");
-        }
-        sb.delete(sb.length() - 3, sb.length());
-
+        sb.append(StringUtils.join(" + ", products));
         return sb.toString();
     }
 
