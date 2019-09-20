@@ -8,10 +8,10 @@ import java.util.List;
 
 public class ChemicalEquation
 {
-    private ImmutableList<Chemical> reactants;
-    private ImmutableList<Chemical> products;
+    protected ImmutableList<Chemical> reactants;
+    protected ImmutableList<Chemical> products;
 
-    private ChemicalEquation(List<Chemical> reactants, List<Chemical> products)
+    protected ChemicalEquation(List<Chemical> reactants, List<Chemical> products)
     {
         this.reactants = ImmutableList.copyOf(reactants);
         this.products = ImmutableList.copyOf(products);
@@ -29,10 +29,10 @@ public class ChemicalEquation
 
     public static class Builder
     {
-        List<Chemical> reactants = new ArrayList<>();
-        List<Chemical> products = new ArrayList<>();
+        private List<Chemical> reactants = new ArrayList<>();
+        private List<Chemical> products = new ArrayList<>();
 
-        public static Builder getInstance()
+        public static Builder newInstance()
         {
             return new Builder();
         }

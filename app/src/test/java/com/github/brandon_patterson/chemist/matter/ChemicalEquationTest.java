@@ -29,7 +29,7 @@ public class ChemicalEquationTest {
                 add(Element.O).
                 build();
 
-        ChemicalEquation respiration = ChemicalEquation.Builder.getInstance()
+        ChemicalEquation respiration = ChemicalEquation.Builder.newInstance()
                 .addReactant(glucose)
                 .addReactant(oxygen)
                 .addProduct(carbonDioxide)
